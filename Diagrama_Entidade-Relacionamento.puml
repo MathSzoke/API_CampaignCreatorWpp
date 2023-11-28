@@ -1,0 +1,69 @@
+@startuml
+
+!define Table class
+!define PKField {+PK}
+!define FKField {+FK}
+!define NormalField {+NF}
+!define IndexField {+IF}
+
+class CommunintyData {
+    +ID PKField
+    +CommunityID FKField
+    +Name IndexField
+    +IsActive NormalField
+}
+
+class WppGroup {
+    +ID PKField
+    +GroupID FKField
+    +Name IndexField
+    +InvitationLink NormalField
+    +IsGroupAnnouncement NormalField
+}
+
+class MemberGroup {
+    +MemberGroupID PKField
+    +GroupID FKField
+    +Phones IndexField
+    +IsMember NormalField
+}
+
+class MessageData {
+    +ID PKField
+    +MessageText IndexField
+    +IsActive NormalField
+    +IsPollMessage NormalField
+}
+
+class SendPoll {
+    +PollID PKField
+    +MessageID FKField
+    +Phone NormalField
+    +PollMaxOptions NormalField
+}
+
+class PollOptions {
+    PollOptionID PKField
+    +PollID FKField
+    +OptionName NormalField
+}
+
+class LogData {
+    +LogID PKField
+    +MessageID FKField
+    +MessageSent NormalField
+    +IsReceivedMessage NormalField
+    +IsReadMessage NormalField
+    +StatusCode NormalField
+    +ResponseMessage NormalField
+}
+
+CommunintyData "1" --> "N" WppGroup
+WppGroup "1" --> "N" MemberGroup
+
+MessageData "1" --> "1" SendPoll
+SendPoll "N" --> "N" PollOptions
+
+LogData "1" --> "N" MessageData
+
+@enduml

@@ -1,0 +1,853 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AtividadePratica-AnalistaDeSistemas</name>
+    </assembly>
+    <members>
+        <member name="T:Controllers.CommunityController">
+            <summary>
+            Classe gerenciadora de Comunidades no Whatsapp.
+            </summary>
+            <param name="restConfiguration"></param>
+            <param name="wppDbContext"></param>
+        </member>
+        <member name="M:Controllers.CommunityController.#ctor(Services.IRestConfiguration,Data.WppDbContext)">
+            <summary>
+            Classe gerenciadora de Comunidades no Whatsapp.
+            </summary>
+            <param name="restConfiguration"></param>
+            <param name="wppDbContext"></param>
+        </member>
+        <member name="F:Controllers.CommunityController._restConfiguration">
+            <summary>
+            Configuração para realizar requisições REST.
+            </summary>
+        </member>
+        <member name="F:Controllers.CommunityController._context">
+            <summary>
+            DBContext utilizado para interação com o banco de dados.
+            </summary>
+        </member>
+        <member name="M:Controllers.CommunityController.CreateCommunity(Models.CreateCommunity)">
+            <summary>
+            
+            </summary>
+            <param name="cc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Controllers.CommunityController.LinkGroupCommunity(Models.LinkGroupsCommunity)">
+            <summary>
+            
+            </summary>
+            <param name="lgc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Controllers.CommunityController.UnLinkGroupCommunity(Models.UnLinkGroupsCommunity)">
+            <summary>
+            
+            </summary>
+            <param name="ulgc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Controllers.CommunityController.DesactiveCommunity(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="IdCommunity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Controllers.CommunityController.GetCommunnitites(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Controllers.ContactsController">
+            <summary>
+            Classe gerenciadora de contatos no Whatsapp.
+            </summary>
+            <param name="restConfiguration"></param>
+            <param name="wppDbContext"></param>
+        </member>
+        <member name="M:Controllers.ContactsController.#ctor(Services.IRestConfiguration,Data.WppDbContext)">
+            <summary>
+            Classe gerenciadora de contatos no Whatsapp.
+            </summary>
+            <param name="restConfiguration"></param>
+            <param name="wppDbContext"></param>
+        </member>
+        <member name="F:Controllers.ContactsController._context">
+            <summary>
+            DBContext
+            </summary>
+        </member>
+        <member name="M:Controllers.ContactsController.GetContacts">
+            <summary>
+            Retorna todos os contatos salvos.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Controllers.GroupController">
+            <summary>
+            Controlador responsável por operações relacionadas a configurações de grupos.
+            </summary>
+            <param name="restConfiguration">Configuração para realizar requisições REST.</param>
+            <param name="wppDbContext">DBContext para interação com o banco de dados.</param>
+        </member>
+        <member name="M:Controllers.GroupController.#ctor(Services.IRestConfiguration,Data.WppDbContext)">
+            <summary>
+            Controlador responsável por operações relacionadas a configurações de grupos.
+            </summary>
+            <param name="restConfiguration">Configuração para realizar requisições REST.</param>
+            <param name="wppDbContext">DBContext para interação com o banco de dados.</param>
+        </member>
+        <member name="F:Controllers.GroupController._restConfiguration">
+            <summary>
+            Configuração para realizar requisições REST.
+            </summary>
+        </member>
+        <member name="F:Controllers.GroupController._context">
+            <summary>
+            DBContext utilizado para interação com o banco de dados.
+            </summary>
+        </member>
+        <member name="M:Controllers.GroupController.CreateGroup(Models.CreateGroup)">
+            <summary>
+            Cria um grupo no WhatsApp, definindo um nome e números que serão adicionados na hora da criação.
+            </summary>
+            <param name="g">Objeto contendo informações para criar um grupo.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.GroupController.AddMember(Models.AddMemberGroup)">
+            <summary>
+            Adiciona novos membros ao grupo e participar da campanha!
+            </summary>
+            <param name="amg">Objeto contendo informações para adicionar um membro no grupo.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.GroupController.RemoveMember(Models.RemoveMemberGroup)">
+            <summary>
+            Remove membros do grupo.
+            </summary>
+            <param name="rmg">Objeto contendo informações para remover um membro do grupo.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.GroupController.UpdateGroupSettings(Models.UpdateGroup)">
+            <summary>
+            Atualiza as configurações de um grupo.
+            </summary>
+            <param name="ug">Objeto contendo informações para atualizar as configurações do grupo.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.GroupController.UpdateGroupDescription(Models.UpdateGroupDescription)">
+            <summary>
+            Atualiza a descrição de um grupo.
+            </summary>
+            <param name="ugd">Objeto contendo informações para atualizar a descrição do grupo.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.GroupController.GetInvitationLinkByName(System.String)">
+            <summary>
+            Retorna o link de convite do grupo do Whatsapp na qual foi criada pelo usuário da API.
+            </summary>
+            <param name="name">Nome do grupo para o qual obter o link de convite.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.GroupController.GetGroupIDByName(System.String)">
+            <summary>
+            Retorna o ID do grupo do Whatsapp na qual foi criada pelo usuário da API.
+            </summary>
+            <param name="name">Nome do grupo para o qual obter o ID.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="T:Controllers.InstanceController">
+            <summary>
+            Cria uma instância para conectar-se á API z-api.io
+            </summary>
+            <param name="restConfiguration"></param>
+        </member>
+        <member name="M:Controllers.InstanceController.#ctor(Services.IRestConfiguration)">
+            <summary>
+            Cria uma instância para conectar-se á API z-api.io
+            </summary>
+            <param name="restConfiguration"></param>
+        </member>
+        <member name="M:Controllers.InstanceController.GetQRCodeImage">
+            <summary>
+            Retorna o Base64 da imagem do QRCode do Whatsapp.
+            </summary>
+            <returns>Retorna o status de conectado True caso esteja conectado, caso não esteja conectado retornará o Base64 da imagem QR Code do Wpp.</returns>
+        </member>
+        <member name="M:Controllers.InstanceController.RestartInstance">
+            <summary>
+            Reinicie sua instância.
+            </summary>
+            <returns>Status http 200 informando que foi reiniciado com sucesso.</returns>
+        </member>
+        <member name="M:Controllers.InstanceController.DisconnectInstance">
+            <summary>
+            Disconectar conta Whatsapp de sua instância.
+            </summary>
+            <returns>Status http 200 informando que foi disconectado com sucesso.</returns>
+        </member>
+        <member name="T:Controllers.MessageController">
+            <summary>
+            Controlador responsável por operações relacionadas a mensagens.
+            </summary>
+            <param name="restConfiguration">Configuração para realizar requisições REST.</param>
+            <param name="wppDbContext">DBContext para interação com o banco de dados.</param>
+        </member>
+        <member name="M:Controllers.MessageController.#ctor(Services.IRestConfiguration,Data.WppDbContext)">
+            <summary>
+            Controlador responsável por operações relacionadas a mensagens.
+            </summary>
+            <param name="restConfiguration">Configuração para realizar requisições REST.</param>
+            <param name="wppDbContext">DBContext para interação com o banco de dados.</param>
+        </member>
+        <member name="F:Controllers.MessageController._context">
+            <summary>
+            DBContext utilizado para interação com o banco de dados.
+            </summary>
+        </member>
+        <member name="F:Controllers.MessageController._restConfiguration">
+            <summary>
+            Configuração para realizar requisições REST.
+            </summary>
+        </member>
+        <member name="M:Controllers.MessageController.SendMessage(Models.SendMessage)">
+            <summary>
+            Envia uma mensagem para o número de telefone especificado.
+            </summary>
+            <param name="sm">Objeto contendo informações da mensagem a ser enviada.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.MessageController.SendMessageConfigurated(System.Int32,System.String)">
+            <summary>
+            Envia uma mensagem configurada com base no ID da mensagem e/ou número de telefone a ser enviado.
+            <para>
+            Preencha o campo "PhoneNumber" apenas se não houver um número setado ao configurar a mensagem.
+            </para>
+            </summary>
+            <param name="MessageID">ID da mensagem a ser enviada. ATENÇÃO: o ID se encontra armazenado no banco de dados, na tabela "MessageSettigns".</param>
+            <param name="PhoneNumber">Insira o número de telefone para qual a mensagem será enviada. ATENÇÃO: este número deverá ser incluso apenas se a mensagem cadastrada não tiver um número definido para ser enviado.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.MessageController.NewMessage(Models.MessageSettings)">
+            <summary>
+            Cria uma nova mensagem ou enquete.
+            <para>
+            É possivel remover a propriedade "phone" do json e assim, configurar uma mensagem sem um destinatário especifico. <br/>
+            Sendo assim, a mensagem em questão estar disponivel para N números.
+            </para>
+            </summary>
+            <param name="ms">Objeto contendo informações da mensagem ou enquete a ser criada.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.MessageController.UpdateMessage(Models.MessageSettings,System.Nullable{System.Int32})">
+            <summary>
+            Atualiza uma mensagem ou enquete existente com base no ID da mensagem.
+            </summary>
+            <param name="ms">Objeto contendo informações atualizadas da mensagem ou enquete.</param>
+            <param name="messageID">ID da mensagem a ser atualizada.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.MessageController.GetQueue">
+            <summary>
+            Obtém a fila de mensagens.
+            </summary>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="M:Controllers.MessageController.GetChat(System.String)">
+            <summary>
+            Obtém o histórico de chat para o número de telefone especificado.
+            </summary>
+            <param name="phone">Número de telefone para o qual obter o histórico de chat.</param>
+            <returns>ActionResult representando o resultado da operação.</returns>
+        </member>
+        <member name="T:Data.DatabaseInitializer">
+            <summary>
+            Classe responsável por inicializar e configurar o banco de dados.
+            </summary>
+        </member>
+        <member name="M:Data.DatabaseInitializer.Initialize(Data.WppDbContext)">
+            <summary>
+            Inicializa o banco de dados, garantindo que ele seja criado se ainda não existir.
+            </summary>
+            <param name="context">O contexto do banco de dados a ser inicializado.</param>
+        </member>
+        <member name="M:Data.DatabaseInitializer.GetDefaultConnectionString">
+            <summary>
+            Obtém a string de conexão padrão para o banco de dados.
+            </summary>
+            <returns>A string de conexão padrão.</returns>
+        </member>
+        <member name="T:Data.Handlers.RestConfiguration">
+            <summary>
+            Configuração para realizar chamadas à API usando RestSharp.
+            </summary>
+            <param name="configuration">Configuração do aplicativo.</param>
+        </member>
+        <member name="M:Data.Handlers.RestConfiguration.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configuração para realizar chamadas à API usando RestSharp.
+            </summary>
+            <param name="configuration">Configuração do aplicativo.</param>
+        </member>
+        <member name="P:Data.Handlers.RestConfiguration.Client">
+            <summary>
+            Conecta ao URL da API.
+            </summary>
+        </member>
+        <member name="M:Data.Handlers.RestConfiguration.CreateRestRequest(System.String,RestSharp.Method)">
+            <summary>
+            Cria um <see cref="T:RestSharp.RestRequest"/> no RestSharp, adicionando Headers na conexão.
+            </summary>
+            <param name="resource">Recurso da API.</param>
+            <param name="method">Método HTTP.</param>
+            <returns>Instância do <see cref="T:RestSharp.RestRequest"/>.</returns>
+        </member>
+        <member name="M:Data.Handlers.RestConfiguration.ExecuteContent(System.String,RestSharp.Method,System.String)">
+            <summary>
+            Executa a chamada de API.
+            </summary>
+            <param name="resource">Recurso da API.</param>
+            <param name="method">Método HTTP.</param>
+            <param name="parameter">Parâmetro da chamada.</param>
+            <returns><see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> contendo a resposta da API.</returns>
+        </member>
+        <member name="T:Data.Handlers.WppConfiguration">
+            <summary>
+            Classe para configurações de grupos e contatos da API z-api.io
+            </summary>
+        </member>
+        <member name="M:Data.Handlers.WppConfiguration.#ctor(Services.IRestConfiguration,Data.WppDbContext)">
+            <summary>
+            Classe para configurações de grupos e contatos da API z-api.io
+            </summary>
+        </member>
+        <member name="F:Data.Handlers.WppConfiguration._context">
+            <summary>
+            DBContext
+            </summary>
+        </member>
+        <member name="M:Data.Handlers.WppConfiguration.CleanPhones(System.Collections.Generic.List{System.String})">
+            <summary>
+            Limpa uma lista de números de telefone, removendo todos os simbolos e caracteres que não sejam apenas números.
+            </summary>
+            <param name="phones"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data.Handlers.WppConfiguration.CleanPhone(System.String)">
+            <summary>
+            Limpa um unico número de telefone, removendo todos os simbolos e caracteres que não sejam apenas números.
+            </summary>
+            <param name="phone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data.Handlers.WppConfiguration.MapToGroupWpp(Newtonsoft.Json.Linq.JToken,Models.CreateGroup)">
+            <summary>
+            
+            </summary>
+            <param name="innerToken"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data.Handlers.WppConfiguration.MapToCommunityWpp(Newtonsoft.Json.Linq.JToken,Models.CreateCommunity)">
+            <summary>
+            
+            </summary>
+            <param name="innerToken"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Data.Handlers.WppConfiguration.RegexNumber">
+            <remarks>
+            Pattern:<br/>
+            <code>[^0-9]</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match a character in the set [^0-9].<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="T:Data.WppDbContext">
+            <summary>
+            Representa o contexto de banco de dados para a entidade GroupWpp.
+            </summary>
+        </member>
+        <member name="M:Data.WppDbContext.#ctor">
+            <summary>
+            Construtor padrão sem parâmetros para o contexto do banco de dados.
+            </summary>
+        </member>
+        <member name="M:Data.WppDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Data.WppDbContext})">
+            <summary>
+            Construtor que aceita as opções de contexto do banco de dados.
+            </summary>
+            <param name="options">Opções de contexto do banco de dados.</param>
+        </member>
+        <member name="P:Data.WppDbContext.CommunityData">
+            <summary>
+            Obtém ou define o conjunto de dados para a entidade PollOption no contexto do banco de dados.
+            </summary>
+        </member>
+        <member name="P:Data.WppDbContext.GroupWppData">
+            <summary>
+            Obtém ou define o conjunto de dados para a entidade GroupWpp no contexto do banco de dados.
+            </summary>
+        </member>
+        <member name="P:Data.WppDbContext.MemberGroupData">
+            <summary>
+            Obtém ou define o conjunto de dados para a entidade MemberGroup no contexto do banco de dados.
+            </summary>
+        </member>
+        <member name="P:Data.WppDbContext.MessageSettings">
+            <summary>
+            Obtém ou define o conjunto de dados para a entidade MessageSettings no contexto do banco de dados.
+            </summary>
+        </member>
+        <member name="P:Data.WppDbContext.SendPoll">
+            <summary>
+            Obtém ou define o conjunto de dados para a entidade SendPoll no contexto do banco de dados.
+            </summary>
+        </member>
+        <member name="P:Data.WppDbContext.PollOption">
+            <summary>
+            Obtém ou define o conjunto de dados para a entidade PollOption no contexto do banco de dados.
+            </summary>
+        </member>
+        <member name="M:Data.WppDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Configura as opções de contexto do banco de dados ao usar o provedor SQL Server.
+            </summary>
+            <param name="optionsBuilder">Construtor de opções de contexto do banco de dados.</param>
+        </member>
+        <member name="M:Data.WppDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configura o modelo do banco de dados durante a construção do modelo.
+            </summary>
+            <param name="builder">Construtor do modelo do banco de dados.</param>
+            <exception cref="T:System.ArgumentNullException">Exceção lançada quando o parâmetro builder é nulo.</exception>
+        </member>
+        <member name="T:AtividadePraticaAnalistaDeSistemas.Migrations.NameMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:AtividadePraticaAnalistaDeSistemas.Migrations.NameMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AtividadePraticaAnalistaDeSistemas.Migrations.NameMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AtividadePraticaAnalistaDeSistemas.Migrations.NameMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Models.CommunityData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.CommunityData.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.CommunityData.CommunityID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.CommunityData.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.CommunityData.WppGroups">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Models.CreateCommunity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.CreateCommunity.name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Models.LinkGroupsCommunity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.LinkGroupsCommunity.communityId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.LinkGroupsCommunity.groupsPhones">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Models.UnLinkGroupsCommunity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.UnLinkGroupsCommunity.communityId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Models.UnLinkGroupsCommunity.groupsPhones">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Models.MessageSettings">
+            <summary>
+            Configurações relacionadas a mensagens no WhatsApp.
+            </summary>
+        </member>
+        <member name="P:Models.MessageSettings.ID">
+            <summary>
+            Identificador único das configurações de mensagem.
+            </summary>
+        </member>
+        <member name="P:Models.MessageSettings.MessageText">
+            <summary>
+            Texto da mensagem.
+            </summary>
+        </member>
+        <member name="P:Models.MessageSettings.IsActive">
+            <summary>
+            Indica se as configurações de mensagem estão ativas.
+            </summary>
+        </member>
+        <member name="P:Models.MessageSettings.IsPollMessage">
+            <summary>
+            Indica se a mensagem é uma enquete.
+            </summary>
+        </member>
+        <member name="P:Models.MessageSettings.SendPoll">
+            <summary>
+            Enquete associada às configurações de mensagem (Relacionamento 1-para-1).
+            </summary>
+        </member>
+        <member name="T:Models.SendMessage">
+            <summary>
+            Representa uma mensagem a ser enviada.
+            </summary>
+        </member>
+        <member name="P:Models.SendMessage.phone">
+            <summary>
+            Número de telefone do destinatário.
+            </summary>
+        </member>
+        <member name="P:Models.SendMessage.message">
+            <summary>
+            Conteúdo da mensagem a ser enviada.
+            </summary>
+        </member>
+        <member name="T:Models.SendPoll">
+            <summary>
+            Representa uma enquete a ser enviada no WhatsApp.
+            </summary>
+        </member>
+        <member name="P:Models.SendPoll.PollID">
+            <summary>
+            Identificador único da enquete.
+            </summary>
+        </member>
+        <member name="P:Models.SendPoll.MessageID">
+            <summary>
+            Identificador único das configurações de mensagem associadas à enquete.
+            </summary>
+        </member>
+        <member name="P:Models.SendPoll.phone">
+            <summary>
+            Número de telefone associado à enquete.
+            </summary>
+        </member>
+        <member name="P:Models.SendPoll.pollMaxOptions">
+            <summary>
+            Número máximo de opções na enquete.
+            </summary>
+        </member>
+        <member name="P:Models.SendPoll.message">
+            <summary>
+            Texto da mensagem associada à enquete.
+            </summary>
+        </member>
+        <member name="P:Models.SendPoll.PollOptions">
+            <summary>
+            Opções da enquete (Relacionamento 1-para-muitos).
+            </summary>
+        </member>
+        <member name="P:Models.SendPoll.MessageSettings">
+            <summary>
+            Configurações de mensagem associadas à enquete (Relacionamento 1-para-1).
+            </summary>
+        </member>
+        <member name="T:Models.PollOptions">
+            <summary>
+            Representa uma opção de enquete.
+            </summary>
+        </member>
+        <member name="P:Models.PollOptions.PollOptionID">
+            <summary>
+            Identificador único da opção de enquete.
+            </summary>
+        </member>
+        <member name="P:Models.PollOptions.PollID">
+            <summary>
+            Identificador único da enquete associada à opção.
+            </summary>
+        </member>
+        <member name="P:Models.PollOptions.name">
+            <summary>
+            Nome da opção de enquete.
+            </summary>
+        </member>
+        <member name="T:Models.Participant">
+            <summary>
+            Representa um participante de um grupo.
+            </summary>
+        </member>
+        <member name="P:Models.Participant.Phone">
+            <summary>
+            Número de telefone do participante.
+            </summary>
+        </member>
+        <member name="P:Models.Participant.IsAdmin">
+            <summary>
+            Indica se o participante é um administrador do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.Participant.IsSuperAdmin">
+            <summary>
+            Indica se o participante é um superadministrador do grupo.
+            </summary>
+        </member>
+        <member name="T:Models.WppGroup">
+            <summary>
+            Representa um grupo no WhatsApp.
+            </summary>
+        </member>
+        <member name="P:Models.WppGroup.ID">
+            <summary>
+            Identificador único do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.WppGroup.GroupID">
+            <summary>
+            Identificador único do grupo no WhatsApp.
+            </summary>
+        </member>
+        <member name="P:Models.WppGroup.Name">
+            <summary>
+            Nome do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.WppGroup.InvitationLink">
+            <summary>
+            Link de convite para o grupo.
+            </summary>
+        </member>
+        <member name="P:Models.WppGroup.IsGroupAnnouncement">
+            <summary>
+            Grupo de anúncio da comunidade.
+            </summary>
+        </member>
+        <member name="P:Models.WppGroup.CommunityID">
+            <summary>
+            Identificador único do grupo no WhatsApp.
+            </summary>
+        </member>
+        <member name="P:Models.WppGroup.MemberGroup">
+            <summary>
+            Membros do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.WppGroup.CommunityData">
+            <summary>
+            Grupo ao qual o membro pertence.
+            </summary>
+        </member>
+        <member name="T:Models.MemberGroup">
+            <summary>
+            Representa um membro de um grupo.
+            </summary>
+        </member>
+        <member name="P:Models.MemberGroup.MemberID">
+            <summary>
+            Identificador único do membro.
+            </summary>
+        </member>
+        <member name="P:Models.MemberGroup.Group">
+            <summary>
+            Grupo ao qual o membro pertence.
+            </summary>
+        </member>
+        <member name="P:Models.MemberGroup.GroupID">
+            <summary>
+            Identificador único do grupo ao qual o membro pertence.
+            </summary>
+        </member>
+        <member name="P:Models.MemberGroup.Phones">
+            <summary>
+            Números de telefone dos participantes do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.MemberGroup.IsMember">
+            <summary>
+            Indica se o usuário pertence ao grupo em questão.
+            </summary>
+        </member>
+        <member name="T:Models.CreateGroup">
+            <summary>
+            Representa a estrutura de dados para criar um grupo.
+            </summary>
+        </member>
+        <member name="P:Models.CreateGroup.groupName">
+            <summary>
+            Nome do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.CreateGroup.phones">
+            <summary>
+            Números de telefone dos participantes do grupo.
+            </summary>
+        </member>
+        <member name="T:Models.AddMemberGroup">
+            <summary>
+            Representa a estrutura de dados para adicionar membros a um grupo.
+            </summary>
+        </member>
+        <member name="P:Models.AddMemberGroup.groupId">
+            <summary>
+            Identificador único do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.AddMemberGroup.phones">
+            <summary>
+            Números de telefone dos participantes a serem adicionados.
+            </summary>
+        </member>
+        <member name="T:Models.RemoveMemberGroup">
+            <summary>
+            Representa a estrutura de dados para remover membros de um grupo.
+            </summary>
+        </member>
+        <member name="P:Models.RemoveMemberGroup.groupId">
+            <summary>
+            Identificador único do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.RemoveMemberGroup.phones">
+            <summary>
+            Números de telefone dos participantes a serem removidos.
+            </summary>
+        </member>
+        <member name="T:Models.UpdateGroup">
+            <summary>
+            Representa a estrutura de dados para atualizar as configurações de um grupo.
+            </summary>
+        </member>
+        <member name="P:Models.UpdateGroup.phone">
+            <summary>
+            Número de telefone do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.UpdateGroup.adminOnlyMessage">
+            <summary>
+            Indica se a mensagem é restrita a administradores.
+            </summary>
+        </member>
+        <member name="P:Models.UpdateGroup.adminOnlySettings">
+            <summary>
+            Indica se as configurações são restritas a administradores.
+            </summary>
+        </member>
+        <member name="P:Models.UpdateGroup.requireAdminAproval">
+            <summary>
+            Indica se a aprovação do administrador é necessária.
+            </summary>
+        </member>
+        <member name="T:Models.UpdateGroupDescription">
+            <summary>
+            Representa a estrutura de dados para atualizar a descrição de um grupo.
+            </summary>
+        </member>
+        <member name="P:Models.UpdateGroupDescription.groupId">
+            <summary>
+            Identificador único do grupo.
+            </summary>
+        </member>
+        <member name="P:Models.UpdateGroupDescription.groupDescription">
+            <summary>
+            Nova descrição do grupo.
+            </summary>
+        </member>
+        <member name="T:Services.IRestConfiguration">
+            <summary>
+            Interface obtendo as configurações do RestSharp.
+            </summary>
+        </member>
+        <member name="M:Services.IRestConfiguration.CreateRestRequest(System.String,RestSharp.Method)">
+            <summary>
+            Cria um <see cref="T:RestSharp.RestRequest"/> no RestSharp, adicionando Headers na conexão.
+            </summary>
+            <param name="resource">Recurso da API.</param>
+            <param name="method">Método HTTP.</param>
+            <returns>Instância do <see cref="T:RestSharp.RestRequest"/>.</returns>
+        </member>
+        <member name="M:Services.IRestConfiguration.ExecuteContent(System.String,RestSharp.Method,System.String)">
+            <summary>
+            Executa a chamada de API.
+            </summary>
+            <param name="resource">Recurso da API.</param>
+            <param name="method">Método HTTP.</param>
+            <param name="parameter">Parâmetro da chamada.</param>
+            <returns><see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> contendo a resposta da API.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.RegexNumber_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the RegexNumber method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.RegexNumber_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.RegexNumber_0.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.RegexNumber_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.RegexNumber_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.RegexNumber_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.RegexNumber_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.RegexNumber_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
+        </member>
+    </members>
+</doc>

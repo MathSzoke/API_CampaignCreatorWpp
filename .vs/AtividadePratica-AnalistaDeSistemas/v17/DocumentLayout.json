@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\Projects C# - Tests\\AtividadePratica-AnalistaDeSistemas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F8DDF42-E740-4E87-8DE3-219D17BDCF2F}|AtividadePratica-AnalistaDeSistemas\\AtividadePratica-AnalistaDeSistemas.csproj|d:\\projects\\projects c# - tests\\atividadepratica-analistadesistemas\\atividadepratica-analistadesistemas\\controllers\\wppcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F8DDF42-E740-4E87-8DE3-219D17BDCF2F}|AtividadePratica-AnalistaDeSistemas\\AtividadePratica-AnalistaDeSistemas.csproj|solutionrelative:atividadepratica-analistadesistemas\\controllers\\wppcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F8DDF42-E740-4E87-8DE3-219D17BDCF2F}|AtividadePratica-AnalistaDeSistemas\\AtividadePratica-AnalistaDeSistemas.csproj|d:\\projects\\projects c# - tests\\atividadepratica-analistadesistemas\\atividadepratica-analistadesistemas\\models\\wppdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F8DDF42-E740-4E87-8DE3-219D17BDCF2F}|AtividadePratica-AnalistaDeSistemas\\AtividadePratica-AnalistaDeSistemas.csproj|solutionrelative:atividadepratica-analistadesistemas\\models\\wppdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 172,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WppData.cs",
+              "DocumentMoniker": "D:\\Projects\\Projects C# - Tests\\AtividadePratica-AnalistaDeSistemas\\AtividadePratica-AnalistaDeSistemas\\Models\\WppData.cs",
+              "RelativeDocumentMoniker": "AtividadePratica-AnalistaDeSistemas\\Models\\WppData.cs",
+              "ToolTip": "D:\\Projects\\Projects C# - Tests\\AtividadePratica-AnalistaDeSistemas\\AtividadePratica-AnalistaDeSistemas\\Models\\WppData.cs",
+              "RelativeToolTip": "AtividadePratica-AnalistaDeSistemas\\Models\\WppData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-21T20:04:47.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WppController.cs",
+              "DocumentMoniker": "D:\\Projects\\Projects C# - Tests\\AtividadePratica-AnalistaDeSistemas\\AtividadePratica-AnalistaDeSistemas\\Controllers\\WppController.cs",
+              "RelativeDocumentMoniker": "AtividadePratica-AnalistaDeSistemas\\Controllers\\WppController.cs",
+              "ToolTip": "D:\\Projects\\Projects C# - Tests\\AtividadePratica-AnalistaDeSistemas\\AtividadePratica-AnalistaDeSistemas\\Controllers\\WppController.cs",
+              "RelativeToolTip": "AtividadePratica-AnalistaDeSistemas\\Controllers\\WppController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwC0AAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-21T18:15:11.616Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
