@@ -1,38 +1,3 @@
-<style>
-    http-method
-    {
-      color: #fff;
-      padding: 5px;
-      border-radius: 3px;
-    }
-
-    http-method.post
-    
-    {
-      background-color: #49cc90;/* Verde para POST */
-    }
-
-    http-method.get
-    {
-      background-color: #61affe; /* Azul para GET */
-    }
-
-    http-method.delete
-    {
-      background-color: #f55249; /* Vermelho para DELETE */
-    }
-    
-    http-method.put
-    {
-      background-color: #f39c12; /* Amarelo para PUT */
-    }
-
-    http-method:not(.post):not(.get):not(.delete):not(.put)
-    {
-      background-color: #555;
-    }
-</style>
-
 <h1>Criador de campanhas para Whatsapp</h1>
 
 <p>Esta API tem como objetivo criar campanhas no Whatsapp. O que significa que temos algumas funcionalidades especificas do projeto, tais como:</p> <br>
@@ -186,18 +151,3 @@
     </ul>    
   </li>
 </ul>
-
-<script>
-    customElements.define('http-method', class extends HTMLElement
-    {
-      constructor()
-      {
-        super();
-        const shadow = this.attachShadow({ mode: 'open' });
-
-        this.classList.add(this.getAttribute('method'));
-
-        shadow.textContent = this.getAttribute('method');
-      }
-    });
-</script>
